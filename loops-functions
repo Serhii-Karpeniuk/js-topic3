@@ -1,0 +1,114 @@
+// - - - - - - -  first task - - - -  - -  //
+function createArray (start, end) {
+  let arr = [];
+  for (let i = start; i <= end; i++){
+      arr.push(i);
+  }
+  return arr;
+}
+
+let arr = createArray(2, 4);
+console.log(arr);
+
+// -  - - - - - - second task - - - - - - - - - - //
+
+const arr = [5, 3, 4, 5,6,7,3];
+const arr2 = compact(arr);
+function compact(arr) {
+  let arr2 = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr2.indexOf(arr[i]) === -1)
+      arr2.push(arr[i]);
+  }
+  return (arr2)
+}
+console.log(arr2);
+
+// -  - - - - - -third task - - - - - - - - - - //
+function integers (a, b) {
+   for (let i = a; i <= b; i++) {
+        for (let h = a; h <= i; h++ ) {
+          console.log (i);
+        }
+    }
+}
+
+integers(2, 4);
+
+
+// -  - - - - - - four task  - - - - - - - - - - //
+
+function randArray(k) {
+  let arr = [];
+  for (let i = 0; i < k; i++) {
+   let randomNumber = Math.round(Math.random() * 500);
+    arr.push(randomNumber);
+  }
+  return arr;
+}
+
+console.log(randArray(5));
+
+
+// -  - - - - - -five task - - - - - - - - - - //
+
+let arr = [5, "Limit", 12, "a", "3", 99, 2, [2, 4, 3, "33", "a", "text"], "strong", "broun"];
+
+function showByTypes (arr) {
+  let number = [];
+  let string = [];
+
+  function checkTypesData(array) {
+    for (let i = 0; i < array.length; i++) {
+      if (Array.isArray(array[i])) {
+        checkTypesData(array[i]);
+      } else if (typeof array[i] === 'number') {
+        number.push(array[i]);
+      } else if (typeof array[i] === 'string') {
+        string.push(array[i]);
+      }
+    }
+  }
+  checkTypesData(arr)
+  return [number, string];
+}
+
+const [number, string] = showByTypes (arr);
+console.log(number);
+console.log(string);
+
+// -  - - - - - - six task - - - - - - - - - - //
+
+function calc (a, b, op) {
+  let result;
+ if (op === 1) {
+   result = a - b;
+ } else if (op === 2) {
+   result = a * b;
+ } else if (op === 3) {
+     result = a / b;
+ } else {
+   result = a + b;
+ }
+  return result;
+}
+
+console.log(calc(5, 2, 2));
+
+// -  - - - - - - seven task - - - - - - - - - - //
+
+
+let arr = [1,2,3,4];
+let unigueArr = [];
+function findUnique(arr) {1
+  for (let i = 0; i < arr.length; i++) {
+    if (unigueArr.indexOf(arr[i]) === -1) {
+      unigueArr.push(arr[i]);
+    } else {
+      return false;
+    }
+  }
+  return true;
+}
+
+ console.log(findUnique(arr));
